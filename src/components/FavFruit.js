@@ -80,12 +80,18 @@ class FavFruit extends React.Component {
 			instructions: e.target.value,
 		});
 	};
-
+	handleClose = () => {
+		this.setState({
+			showForm: false,
+		});
+	};
 	render() {
 		return (
 			<Row>
 				{this.state.showForm && (
 					<Form
+						handleClose={this.handleClose}
+						showForm={this.state.showForm}
 						name={this.state.name}
 						instructions={this.state.instructions}
 						photo={this.state.photo}
