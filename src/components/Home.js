@@ -13,7 +13,7 @@ class Home extends React.Component {
 	}
 
 	componentDidMount = async () => {
-		const request = await axios.get(`http://localhost:8001/flowers`);
+		const request = await axios.get(`https://exam3015.herokuapp.com/flowers`);
 		this.setState({
 			dataApiFlower: request.data,
 			showDataFlower: true,
@@ -21,7 +21,7 @@ class Home extends React.Component {
 	};
 
 	addToFavourite = async (obj) => {
-		axios.post(`http://localhost:8001/flowers/favourite`, obj);
+		axios.post(`https://exam3015.herokuapp.com/flowers/favourite`, obj);
 		console.log(obj);
 	};
 	render() {
